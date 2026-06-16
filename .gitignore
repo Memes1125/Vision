@@ -6,6 +6,7 @@ __pycache__/
 # Обучение — в git: runs/train/ (модель). Остальное локально
 runs/predict/
 runs/smoke_test/
+runs/cam_probe/
 *.cache
 /*.pt
 

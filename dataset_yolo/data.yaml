@@ -1,4 +1,4 @@
-path: D:/Program Files (x86)/Все Работы/Курсор/vision/dataset_yolo
+path: .
 train: images/train
 val: images/val
 nc: 2
