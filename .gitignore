@@ -3,10 +3,11 @@ __pycache__/
 *.pyc
 .DS_Store
 
-# Обучение / артефакты
-runs/
-*.pt
+# Обучение — в git: runs/train/ (модель). Остальное локально
+runs/predict/
+runs/smoke_test/
 *.cache
+/*.pt
 
 # Сборка camera_server
 dist/

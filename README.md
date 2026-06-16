@@ -33,5 +33,6 @@ scripts\run_camera_client.bat
 
 - `dataset/` — кадры и YOLO-разметка (`.txt` + `classes.txt`)
 - `scripts/` — установка, обучение, инференс, камеры
-- `runs/` — результаты обучения (не в git)
+- `runs/train/` — обученная модель (`weights/best.pt`) и метрики
+- `runs/predict/` — результаты инференса (локально, не в git)
 - venv: `%LOCALAPPDATA%\vision\venv` (labelImg), `%LOCALAPPDATA%\vision\yolo-venv` (YOLO)
