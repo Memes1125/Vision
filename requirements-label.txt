@@ -1,0 +1,7 @@
+# Разметка датасета YOLO (Windows):
+#   scripts\setup_labelimg.bat
+# venv: %LOCALAPPDATA%\vision\venv  (PyQt5 не работает, если venv в пути с кириллицей)
+labelImg>=1.8.6
+PyQt5>=5.15
+lxml>=4.9
+setuptools>=65.0

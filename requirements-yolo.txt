@@ -1,0 +1,6 @@
+# YOLO (Ultralytics) + обучение/инференс. Установка: scripts\setup_yolo.bat
+# torch/torchvision ставятся отдельно с CUDA в setup_yolo.bat
+ultralytics>=8.3.0
+opencv-python>=4.8.0,<5
+numpy>=1.24.0,<3
+PyYAML>=6.0

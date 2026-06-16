@@ -1,0 +1,25 @@
+.venv/
+__pycache__/
+*.pyc
+.DS_Store
+
+# Обучение / артефакты
+runs/
+*.pt
+*.cache
+
+# Сборка camera_server
+dist/
+build/
+*.spec.bak
+camera_server_log.txt
+
+# Кадры датасета (тяжёлые) — в git только разметка .txt
+dataset/*.jpg
+dataset/*.jpeg
+dataset/*.png
+dataset/*.bmp
+dataset/images/
+dataset_yolo/images/
+
+captures/
