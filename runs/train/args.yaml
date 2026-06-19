@@ -1,6 +1,6 @@
 task: detect
 mode: train
-model: yolov8n.pt
+model: yolov8s.pt
 data: D:\Program Files (x86)\Все Работы\Курсор\vision\dataset_yolo\data.yaml
 epochs: 100
 time: null

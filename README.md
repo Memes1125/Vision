@@ -37,6 +37,25 @@ scripts\run_camera_client.bat --host 192.168.0.43 --view
 
 Подробнее: [docs/labelimg.md](docs/labelimg.md), [docs/camera_network.md](docs/camera_network.md).
 
+## Подробная инструкция по работе
+
+Просто обучение 
+```bat
+scripts\train_yolo.bat
+```
+
+С нуля (рекомендуется при сильном росте датасета):
+```bat
+scripts\train_yolo.bat --model yolov8n.pt --epochs 100 --batch 4
+```
+
+Дообучение поверх старой модели (быстрее сходится):
+```bat
+scripts\train_yolo.bat --model runs\train\weights\best.pt --epochs 100 --batch 4
+```
+
+yolov8s.pt точнее, но дольше
+
 ## Структура
 
 - `dataset/` — кадры и YOLO-разметка (`.txt` + `classes.txt`)
