@@ -2,16 +2,23 @@
 from __future__ import annotations
 
 import argparse
+import sys
 from pathlib import Path
 
 from ultralytics import YOLO
+
+SCRIPTS = Path(__file__).resolve().parent
+if str(SCRIPTS) not in sys.path:
+    sys.path.insert(0, str(SCRIPTS))
+
+from model_paths import latest_weights
 
 ROOT = Path(__file__).resolve().parents[1]
 
 
 def default_weights() -> Path:
-    best = ROOT / "runs" / "train" / "weights" / "best.pt"
-    if best.is_file():
+    best = latest_weights(ROOT)
+    if best is not None:
         return best
     return Path("yolov8n.pt")
 

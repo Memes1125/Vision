@@ -12,6 +12,11 @@ import cv2
 from ultralytics import YOLO
 
 ROOT = Path(__file__).resolve().parents[1]
+SCRIPTS = Path(__file__).resolve().parent
+if str(SCRIPTS) not in sys.path:
+    sys.path.insert(0, str(SCRIPTS))
+
+from model_paths import latest_weights
 
 BACKENDS = {
     "dshow": cv2.CAP_DSHOW,
@@ -33,11 +38,11 @@ class OpenProfile:
 
 
 def default_weights() -> Path:
-    best = ROOT / "runs" / "train" / "weights" / "best.pt"
-    if best.is_file():
+    best = latest_weights(ROOT)
+    if best is not None:
         return best
     raise SystemExit(
-        f"Нет обученной модели: {best}\n"
+        "Нет обученной модели в runs/*/weights/best.pt\n"
         "Сначала обучите: scripts\\prepare_yolo_dataset.bat  и  scripts\\train_yolo.bat"
     )
 
@@ -159,7 +164,7 @@ def open_cameras(
 
 def main() -> None:
     parser = argparse.ArgumentParser(description="USB-камеры с YOLO по индексам.")
-    parser.add_argument("--cameras", default="0,1,2", help="Индексы через запятую, например 0,1,2")
+    parser.add_argument("--cameras", default="1,2,3", help="Индексы через запятую, например 1,2,3")
     parser.add_argument("--weights", type=Path, default=None, help="Путь к best.pt")
     parser.add_argument("--conf", type=float, default=0.25)
     parser.add_argument("--device", default="cpu", help="cpu или 0 для GPU")

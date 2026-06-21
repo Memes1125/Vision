@@ -35,8 +35,9 @@ def collect_pairs(source: Path) -> list[tuple[Path, Path]]:
 
 def write_data_yaml(target: Path, names: list[str]) -> Path:
     yaml_path = target / "data.yaml"
+    dataset_root = target.resolve().as_posix()
     lines = [
-        "path: .",
+        f"path: {dataset_root}",
         "train: images/train",
         "val: images/val",
         f"nc: {len(names)}",

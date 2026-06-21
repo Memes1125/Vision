@@ -22,6 +22,14 @@ scripts\predict_yolo.bat --source dataset --save --device cpu
 
 ### Камеры с обученной моделью
 
+Автоматически подхватывается самая свежая `runs/*/weights/best.pt`:
+
+```bat
+scripts\run_camera_yolo.bat
+```
+
+Или с другими индексами:
+
 ```bat
 scripts\run_camera_yolo.bat --cameras 1,2,3
 ```

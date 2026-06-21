@@ -6,4 +6,4 @@ if not exist "%VENV%\Scripts\python.exe" (
     pause
     exit /b 1
 )
-"%VENV%\Scripts\python.exe" "%~dp0camera_yolo.py" --device cpu %*
+"%VENV%\Scripts\python.exe" "%~dp0camera_yolo.py" --device cpu --cameras 1,2,3 %*
